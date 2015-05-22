@@ -1,0 +1,25 @@
+
+figure {
+	width: 5em;
+	height: 8.4em;
+    display: block;
+    margin: 0 1em 2em 0;
+    float: left;
+}
+
+figure img {
+	width: 100%;
+}
+
+figcaption {
+    font-weight: normal;
+    padding: 0;
+    margin: 0.3em 0 0 0;
+}
+
+span.name {
+    text-transform: capitalize;;
+}
+
+@media screen and (max-width: 800px) {
+}

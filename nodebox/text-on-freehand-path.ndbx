@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="20" type="file" uuid="fc09c467-3d8a-4a1a-a72a-ca18531332a3">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="text_on_path1">
+        <node name="character_at1" position="0.00,2.00" prototype="string.character_at"/>
+        <node name="copy1" position="-1.00,0.00" prototype="corevector.copy">
+            <port name="copies" type="int" value="3"/>
+            <port name="rotate" type="float" value="45.0"/>
+            <port name="scale" type="point" value="1.00,1.00"/>
+        </node>
+        <node name="freehand1" position="-1.00,-2.00" prototype="corevector.freehand">
+            <port name="path" type="string" value="M-36.00,-5.50  -36.00,-10.50  -36.00,-23.50  -38.00,-39.50  -44.00,-54.50  -52.00,-69.50  -62.00,-81.50  -71.00,-91.50  -85.00,-102.50  -89.00,-104.50  -94.00,-108.50  -97.00,-110.50  -99.00,-113.50  -102.00,-116.50  -105.00,-119.50  -107.00,-122.50  -108.00,-125.50  -119.00,-134.50  -123.00,-141.50  -124.00,-144.50  -125.00,-147.50  -126.00,-150.50  -128.00,-156.50  -128.00,-162.50  -128.00,-168.50  -129.00,-174.50  -129.00,-180.50  -129.00,-185.50  -129.00,-189.50  -129.00,-190.50  -129.00,-191.50  -129.00,-192.50  -129.00,-195.50  -129.00,-197.50  -129.00,-199.50  -129.00,-201.50  -127.00,-206.50  -126.00,-211.50  -125.00,-216.50  -123.00,-220.50  -122.00,-224.50  -121.00,-230.50  -120.00,-231.50  -120.00,-232.50  -120.00,-233.50  -120.00,-234.50  -120.00,-240.50  -120.00,-244.50  -120.00,-250.50  -120.00,-252.50  -120.00,-256.50  -120.00,-257.50  -120.00,-262.50  -120.00,-264.50  -120.00,-268.50  -120.00,-275.50  -120.00,-278.50  -120.00,-280.50  -120.00,-283.50  -120.00,-285.50  -120.00,-287.50  -120.00,-290.50  -120.00,-292.50  -120.00,-295.50  -120.00,-298.50  -120.00,-301.50  -120.00,-306.50  -120.00,-310.50  -120.00,-312.50  -120.00,-315.50  -120.00,-317.50  -120.00,-320.50  -121.00,-321.50  -126.00,-329.50  -127.00,-331.50  -128.00,-332.50  -129.00,-334.50  -130.00,-336.50  -131.00,-338.50  -132.00,-338.50  -133.00,-339.50  -134.00,-340.50  -135.00,-341.50  -136.00,-344.50  -137.00,-345.50  -139.00,-347.50  -141.00,-349.50  -143.00,-354.50  -143.00,-354.50  -145.00,-355.50  -145.00,-357.50  -145.00,-358.50  -146.00,-358.50  -146.00,-359.50  -147.00,-360.50  -148.00,-360.50  -148.00,-361.50  -149.00,-362.50  -149.00,-363.50 "/>
+        </node>
+        <node name="length1" position="3.00,0.00" prototype="string.length"/>
+        <node name="range1" position="4.00,2.00" prototype="math.range">
+            <port name="start" type="float" value="1.0"/>
+        </node>
+        <node name="string1" position="3.00,-2.00" prototype="string.string">
+            <port name="value" type="string" value="Вы бы никогда не поверили мне, расскажи я вам о прекрасном. Вы непременно бы решили, что мысли у меня только пахабные."/>
+        </node>
+        <node name="text_on_path1" position="-1.00,4.00" prototype="corevector.text_on_path">
+            <port name="text" type="string" value="Вы бы никогда не поверили мне, расскажи я вам о чём-то прекрасном. Вы непременно бы решили, что мысли у меня только пахабные."/>
+            <port name="font_name" type="string" value="Times-Roman"/>
+            <port name="font_size" type="float" value="25.0"/>
+        </node>
+        <conn input="length1.string" output="string1"/>
+        <conn input="character_at1.string" output="string1"/>
+        <conn input="range1.end" output="length1"/>
+        <conn input="character_at1.index" output="range1"/>
+        <conn input="copy1.shape" output="freehand1"/>
+        <conn input="text_on_path1.path" output="copy1"/>
+        <conn input="text_on_path1.margin" output="range1"/>
+        <conn input="text_on_path1.text" output="character_at1"/>
+    </node>
+</ndbx>

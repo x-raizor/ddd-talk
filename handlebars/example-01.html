@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="description" content="Random Users  Collection Viewer">
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/handlebars-v3.0.3.js"></script>
+<script src="js/script.js"></script>
+<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <title>Random Users  Collection Viewer</title>
+</head>
+<body>
+<script id="template" type="text/x-handlebars-template">
+	<section>
+	  {{#results}}
+		<figure>
+	  		<img src="{{user.picture.thumbnail }}" alt="">
+			<figcaption>
+				<span class="name">{{user.name.first}}</span>
+				<span class="name">{{user.name.last}}</span>
+			</figcaption>
+    	</figure>
+		{{/results}}
+	</section>
+</script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="20" type="file" uuid="ad967cfe-bc70-42c0-b6c8-e9baa51c52ee">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <link href="python:custom.py" rel="functions"/>
+    <node name="root" prototype="core.network" renderedChild="combine1">
+        <node category="summator" function="custom/accumulate" name="accumulator" outputRange="list" position="-4.00,7.00">
+            <port description="" label="" name="List of numbers" range="list" type="list" widget="none"/>
+        </node>
+        <node name="combine1" position="0.00,13.00" prototype="list.combine"/>
+        <node name="divide_by_maximum" position="-4.00,4.00" prototype="math.divide"/>
+        <node name="find_dist" position="-4.00,0.00" prototype="data.lookup">
+            <port name="key" type="string" value="dist"/>
+        </node>
+        <node name="font_name" position="5.00,3.00" prototype="string.string">
+            <port name="value" type="string" value="Wayfinding Sans Regular"/>
+        </node>
+        <node name="import_csv1" position="-4.00,-2.00" prototype="data.import_csv">
+            <port name="file" type="string" value="/Users/andrew/Dropbox/webserver/coding/Processing/+Nodebox3/road-map/stops.csv"/>
+        </node>
+        <node name="make_point1" position="-2.00,9.00" prototype="corevector.make_point"/>
+        <node name="make_point2" position="3.00,9.00" prototype="corevector.make_point"/>
+        <node name="max1" position="-3.00,2.00" prototype="math.max"/>
+        <node name="multiply1" position="-4.00,5.00" prototype="math.multiply">
+            <port name="value2" type="float" value="784.0"/>
+        </node>
+        <node name="shift_stops_x" position="5.00,5.00" prototype="math.add"/>
+        <node name="shift_stops_y" position="9.00,5.00" prototype="math.add">
+            <port name="value2" type="float" value="-112.0"/>
+        </node>
+        <node name="stop_svg" position="0.00,11.00" prototype="corevector.import_svg">
+            <port name="file" type="string" value="/Users/andrew/Dropbox/webserver/coding/Processing/+Nodebox3/road-map/oval1.svg"/>
+        </node>
+        <node name="take_names" position="1.00,0.00" prototype="data.lookup">
+            <port name="key" type="string" value="name"/>
+        </node>
+        <node name="text_width" position="8.00,3.00" prototype="math.integer">
+            <port name="value" type="int" value="302"/>
+        </node>
+        <node name="textpath1" position="4.00,11.00" prototype="corevector.textpath">
+            <port name="font_size" type="float" value="28.0"/>
+            <port name="align" type="string" value="LEFT"/>
+            <port name="width" type="float" value="257.0"/>
+        </node>
+        <conn input="divide_by_maximum.value2" output="max1"/>
+        <conn input="multiply1.value1" output="divide_by_maximum"/>
+        <conn input="stop_svg.position" output="make_point1"/>
+        <conn input="find_dist.list" output="import_csv1"/>
+        <conn input="max1.values" output="find_dist"/>
+        <conn input="divide_by_maximum.value1" output="find_dist"/>
+        <conn input="take_names.list" output="import_csv1"/>
+        <conn input="textpath1.text" output="take_names"/>
+        <conn input="textpath1.font_name" output="font_name"/>
+        <conn input="combine1.list1" output="stop_svg"/>
+        <conn input="combine1.list2" output="textpath1"/>
+        <conn input="textpath1.position" output="make_point2"/>
+        <conn input="make_point2.y" output="shift_stops_y"/>
+        <conn input="accumulator.List of numbers" output="multiply1"/>
+        <conn input="make_point1.x" output="accumulator"/>
+        <conn input="make_point2.x" output="accumulator"/>
+        <conn input="textpath1.width" output="text_width"/>
+    </node>
+</ndbx>

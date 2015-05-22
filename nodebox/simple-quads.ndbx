@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="20" type="file" uuid="ea172af8-66aa-4214-8f0e-4ee84ca9f0bd">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="translate1">
+        <node name="make_point1" position="5.00,5.00" prototype="corevector.make_point">
+            <port name="y" type="float" value="-37.0"/>
+        </node>
+        <node name="range1" position="1.00,1.00" prototype="math.range">
+            <port name="end" type="float" value="348.0"/>
+            <port name="step" type="float" value="116.0"/>
+        </node>
+        <node name="rect1" position="3.00,2.00" prototype="corevector.rect"/>
+        <node name="rotate1" position="2.00,5.00" prototype="corevector.rotate"/>
+        <node name="translate1" position="2.00,7.00" prototype="corevector.translate"/>
+        <conn input="rotate1.angle" output="range1"/>
+        <conn input="rotate1.shape" output="rect1"/>
+        <conn input="translate1.shape" output="rotate1"/>
+        <conn input="translate1.translate" output="make_point1"/>
+        <conn input="make_point1.x" output="range1"/>
+    </node>
+</ndbx>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="17" type="file" uuid="271bfffd-dd0e-4864-b94b-67c2afee44f1">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <node name="root" prototype="core.network" renderedChild="arc1">
+        <node name="arc1" position="4.00,7.00" prototype="corevector.arc">
+            <port name="start_angle" type="float" value="-90.0"/>
+        </node>
+        <node name="make_point1" position="4.00,5.00" prototype="corevector.make_point"/>
+        <node name="multiply1" position="5.00,3.00" prototype="math.multiply"/>
+        <node name="multiply2" position="2.00,3.00" prototype="math.multiply">
+            <port name="value2" type="float" value="20.0"/>
+        </node>
+        <node name="range1" position="1.00,1.00" prototype="math.range">
+            <port name="end" type="float" value="18.0"/>
+        </node>
+        <node name="size" position="8.00,5.00" prototype="math.number">
+            <port name="value" type="float" value="16.0"/>
+        </node>
+        <conn input="arc1.width" output="size"/>
+        <conn input="arc1.height" output="size"/>
+        <conn input="multiply1.value1" output="range1"/>
+        <conn input="multiply1.value2" output="size"/>
+        <conn input="arc1.position" output="make_point1"/>
+        <conn input="multiply2.value1" output="range1"/>
+        <conn input="arc1.degrees" output="multiply2"/>
+        <conn input="make_point1.x" output="multiply1"/>
+    </node>
+</ndbx>

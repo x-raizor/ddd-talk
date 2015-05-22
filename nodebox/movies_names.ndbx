@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="20" type="file" uuid="2d39634f-5ab8-473e-897f-783f3cfcab68">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="textpath1">
+        <node name="count1" position="4.00,0.00" prototype="list.count"/>
+        <node name="import_csv1" position="0.00,0.00" prototype="data.import_csv">
+            <port name="file" type="string" value="data/movies-budget-income-rating.csv"/>
+            <port name="delimiter" type="string" value="semicolon"/>
+        </node>
+        <node name="leading" position="4.00,3.00" prototype="math.multiply">
+            <port name="value2" type="float" value="4.200000047683716"/>
+        </node>
+        <node name="lookup1" position="0.00,2.00" prototype="data.lookup">
+            <port name="key" type="string" value="name"/>
+        </node>
+        <node name="make_point1" position="3.00,5.00" prototype="corevector.make_point"/>
+        <node name="range1" position="4.00,2.00" prototype="math.range"/>
+        <node name="textpath1" position="0.00,7.00" prototype="corevector.textpath">
+            <port name="align" type="string" value="LEFT"/>
+        </node>
+        <conn input="lookup1.list" output="import_csv1"/>
+        <conn input="textpath1.text" output="lookup1"/>
+        <conn input="textpath1.position" output="make_point1"/>
+        <conn input="count1.list" output="lookup1"/>
+        <conn input="range1.end" output="count1"/>
+        <conn input="make_point1.y" output="leading"/>
+        <conn input="leading.value1" output="range1"/>
+    </node>
+</ndbx>
