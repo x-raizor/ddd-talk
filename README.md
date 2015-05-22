@@ -17,12 +17,12 @@
 ## Население дизайна данными
 * InDesign: [Data-merge](https://helpx.adobe.com/ru/indesign/using/data-merge.html)
 * Sketch: [Content-generator plugin](https://github.com/timuric/Content-generator-sketch-plugin) — своя коллекция, есть русские имена и фамилии
-- Sketch: [sketch-data-parser plugin](https://github.com/florianpnn/sketch-data-parser) — работает с JSON, загружает картинки по URL прямо в
+- Sketch: [sketch-data-parser plugin](https://github.com/florianpnn/sketch-data-parser) — работает с JSON, загружает картинки по URL прямо в макет
 * Sketch: [SketchSquares plugin](https://github.com/abynim/SketchSquares) — вставляет фотки Instagram в макет
 
 ## Параметрическая графика
 * [Nodebox 3](http://www.nodebox.net) — визуальный программатор графики, бокс-модель — коробочки, провода на входе и выходе
-* [Nodebox 1](https://www.nodebox.net/code/index.php/Reference) — программатор на основе Питона, только Mac. К сожалению, проект не развивается, но есть интересный продолжатель — [PlotDevice](http://plotdevice.io).
+* [Nodebox 1](https://www.nodebox.net/code/index.php/Reference) — программатор на основе Питона, только Mac. К сожалению, проект не развивается, что не мешает мне его применять в подседневной деятельности. Есть интересный продолжатель — [PlotDevice](http://plotdevice.io).
 * [D3.js](http://d3js.org) — мощнейший генератор канвас и SVG-графики в браузере, JavaScript
 * [PaperJS](http://paperjs.org) — векторная графика и анимация в браузере, JavaScript
 * [p5.js](http://p5js.org) — новая адаптация Processing к браузеру, JavaScript
