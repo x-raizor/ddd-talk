@@ -12,9 +12,7 @@
 ### API и генераторы
 * [Instagram](https://instagram.com/developer/endpoints/)
 * [Random User](https://randomuser.me/documentation)
-https://www.mockaroo.com
-https://randomuser.me
-
+* [Mackaroo](https://www.mockaroo.com)
 
 ## Население дизайна данными
 * InDesign: [Data-merge](https://helpx.adobe.com/ru/indesign/using/data-merge.html)
@@ -23,7 +21,8 @@ https://randomuser.me
 * Sketch: [SketchSquares plugin](https://github.com/abynim/SketchSquares) — вставляет фотки Instagram в макет
 
 ## Параметрическая графика
-[* Nodebox](http://www.nodebox.net) — бокс-
+* [Nodebox 3](http://www.nodebox.net) — визуальный программатор графики, бокс-модель — коробочки, провода на входе и выходе
+* [Nodebox 1](https://www.nodebox.net/code/index.php/Reference) — программатор на основе Питона, только Mac. К сожалению, проект не развивается, но есть интересный продолжатель — [PlotDevice](http://plotdevice.io).
 * [D3.js](http://d3js.org) — мощнейший генератор канвас и SVG-графики в браузере, JavaScript
 * [PaperJS](http://paperjs.org) — векторная графика и анимация в браузере, JavaScript
 * [p5.js](http://p5js.org) — новая адаптация Processing к браузеру, JavaScript
