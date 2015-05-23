@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="20" type="file" uuid="17fe5eba-fd23-4340-927d-5b25c787943e">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="copy1">
+        <node name="colorize1" position="3.00,3.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#00000046"/>
+        </node>
+        <node name="copy1" position="1.00,5.00" prototype="corevector.copy">
+            <port name="copies" type="int" value="8"/>
+            <port name="rotate" type="float" value="-23.0"/>
+            <port name="scale" type="point" value="1.00,1.00"/>
+        </node>
+        <node name="frame1" position="4.00,1.00" prototype="core.frame"/>
+        <node name="rect1" position="1.00,1.00" prototype="corevector.rect"/>
+        <conn input="colorize1.shape" output="rect1"/>
+        <conn input="copy1.shape" output="colorize1"/>
+        <conn input="copy1.rotate" output="frame1"/>
+    </node>
+</ndbx>

@@ -2,6 +2,12 @@
 ===============================================
 Поместите данные в начало процесса проектирования, это обнажит проблемы раньше и подарит идеи по визуализации. Между изменениями в данных и дизайне должна быть мгновенная связь.
 
+**На мастерклассе понадобятся**:
+* [Nodebox 3](http://www.nodebox.net)
+* [Google Chrome](https://www.google.com/chrome/browser/desktop/)
+* [Sublime Text](http://www.sublimetext.com)
+* Песочница [JSBin](http://jsbin.com)
+* Библиотеки: [Handlebars](http://handlebarsjs.com), [jQuery](https://jquery.com)
 
 ## Источники данных
 * [Фильмы](http://grouplens.org/datasets/movielens/)
