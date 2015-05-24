@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="20" type="file" uuid="258b4e27-0055-461e-915b-8de0a42ea48c">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="textpath1">
+        <node name="count1" position="8.00,2.00" prototype="list.count"/>
+        <node name="import_csv1" position="1.00,0.00" prototype="data.import_csv">
+            <port name="file" type="string" value="/Users/andrew/reps/ddd-talk/nodebox/data/movies-budget-income-rating.csv"/>
+            <port name="delimiter" type="string" value="semicolon"/>
+        </node>
+        <node name="lookup1" position="5.00,0.00" prototype="data.lookup">
+            <port name="key" type="string" value="name"/>
+        </node>
+        <node name="make_point1" position="5.00,2.00" prototype="corevector.make_point">
+            <port name="y" type="float" value="23.0"/>
+        </node>
+        <node name="range1" position="7.00,4.00" prototype="math.range">
+            <port name="start" type="float" value="1.0"/>
+        </node>
+        <node name="rect1" position="1.00,6.00" prototype="corevector.rect"/>
+        <node name="textpath1" position="1.00,3.00" prototype="corevector.textpath">
+            <port name="text" type="string" value="Мне так нравится смотреть на эти картинки"/>
+            <port name="align" type="string" value="LEFT"/>
+        </node>
+        <conn input="lookup1.list" output="import_csv1"/>
+        <conn input="textpath1.text" output="lookup1"/>
+        <conn input="textpath1.position" output="make_point1"/>
+        <conn input="count1.list" output="lookup1"/>
+        <conn input="range1.end" output="count1"/>
+        <conn input="make_point1.y" output="range1"/>
+    </node>
+</ndbx>
