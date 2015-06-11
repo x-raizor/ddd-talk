@@ -28,6 +28,7 @@
 * Sketch: [Content-generator plugin](https://github.com/timuric/Content-generator-sketch-plugin) — своя коллекция, есть русские имена и фамилии
 - Sketch: [sketch-data-parser plugin](https://github.com/florianpnn/sketch-data-parser) — работает с JSON, загружает картинки по URL прямо в макет
 * Sketch: [SketchSquares plugin](https://github.com/abynim/SketchSquares) — вставляет фотки Instagram в макет
+* Sketch: [Data Populator](https://github.com/preciousforever/sketch-data-populator)
 
 ## Параметрическая графика
 * [Nodebox 3](http://www.nodebox.net) — визуальный программатор графики, бокс-модель — коробочки, провода на входе и выходе
