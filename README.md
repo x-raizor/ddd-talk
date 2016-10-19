@@ -29,6 +29,7 @@
 - Sketch: [sketch-data-parser plugin](https://github.com/florianpnn/sketch-data-parser) — работает с JSON, загружает картинки по URL прямо в макет
 * Sketch: [SketchSquares plugin](https://github.com/abynim/SketchSquares) — вставляет фотки Instagram в макет
 * Sketch: [Data Populator](https://github.com/preciousforever/sketch-data-populator)
+* Sketch: [sketch-mail-merge](https://github.com/kumo/sketch-mail-merge) — вставляет данные из CSV в шаблон
 
 ## Параметрическая графика
 * [Nodebox 3](http://www.nodebox.net) — визуальный программатор графики, бокс-модель — коробочки, провода на входе и выходе
