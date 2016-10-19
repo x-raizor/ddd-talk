@@ -3,8 +3,7 @@
 
 Поместите данные в начало процесса проектирования, это обнажит проблемы раньше и подарит идеи по визуализации. Между изменениями в данных и дизайне должна быть мгновенная связь.
 
-## Выступление
-<iframe width="560" height="315" src="https://www.youtube.com/embed/f4ii5cQa97k" frameborder="0" allowfullscreen></iframe>
+## [ВЫСТУПЛЕНИЕ](https://www.youtube.com/watch?v=f4ii5cQa97k)
 
 ## [СЛАЙДЫ](https://www.slideshare.net/xraizor/ss-48533871) 
 
