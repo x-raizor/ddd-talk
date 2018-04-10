@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="de7826a4-8181-4863-9cc1-83c7c7ae5f0a">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="colorize1">
+        <node name="colorize1" position="1.00,6.00" prototype="corevector.colorize"/>
+        <node name="hsb_color1" position="5.00,3.00" prototype="color.hsb_color">
+            <port name="hue" type="float" value="84.0"/>
+            <port name="saturation" type="float" value="267.0"/>
+            <port name="brightness" type="float" value="206.0"/>
+            <port name="alpha" type="float" value="95.0"/>
+        </node>
+        <node name="integer1" position="-4.00,0.00" prototype="math.integer">
+            <port name="value" type="int" value="143"/>
+        </node>
+        <node name="make_point1" position="0.00,2.00" prototype="corevector.make_point"/>
+        <node name="random_numbers1" position="-1.00,0.00" prototype="math.random_numbers">
+            <port name="amount" type="int" value="40"/>
+            <port name="start" type="float" value="-191.0"/>
+            <port name="end" type="float" value="248.0"/>
+        </node>
+        <node name="random_numbers2" position="-1.00,-1.00" prototype="math.random_numbers">
+            <port name="amount" type="int" value="25"/>
+            <port name="start" type="float" value="-220.0"/>
+            <port name="end" type="float" value="288.0"/>
+            <port name="seed" type="int" value="26"/>
+        </node>
+        <node name="random_numbers3" position="3.00,-1.00" prototype="math.random_numbers">
+            <port name="amount" type="int" value="25"/>
+            <port name="end" type="float" value="359.0"/>
+            <port name="seed" type="int" value="45"/>
+        </node>
+        <node name="rect1" position="1.00,4.00" prototype="corevector.rect">
+            <port name="position" type="point" value="43.00,-50.00"/>
+            <port name="width" type="float" value="122.0"/>
+            <port name="height" type="float" value="37.0"/>
+        </node>
+        <node name="rotate1" position="-3.00,4.00" prototype="corevector.rotate">
+            <port name="angle" type="float" value="18.0"/>
+        </node>
+        <conn input="make_point1.x" output="random_numbers1"/>
+        <conn input="make_point1.y" output="random_numbers2"/>
+        <conn input="random_numbers1.amount" output="integer1"/>
+        <conn input="random_numbers2.amount" output="integer1"/>
+        <conn input="rect1.position" output="make_point1"/>
+        <conn input="rotate1.origin" output="make_point1"/>
+        <conn input="rotate1.shape" output="rect1"/>
+        <conn input="colorize1.shape" output="rotate1"/>
+        <conn input="random_numbers3.amount" output="integer1"/>
+        <conn input="rotate1.angle" output="random_numbers3"/>
+        <conn input="colorize1.fill" output="hsb_color1"/>
+        <conn input="hsb_color1.hue" output="random_numbers3"/>
+    </node>
+</ndbx>
